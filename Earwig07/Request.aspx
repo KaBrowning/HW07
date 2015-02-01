@@ -44,15 +44,14 @@
             <h2>Contact information</h2>
             <label class="label">First name</label>
             <asp:TextBox ID="txtFirstName" runat="server" CssClass="entry"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="rfvFirstName" runat="server" CssClass="validation" Display="Dynamic" ControlToValidate="txtFirstName" ErrorMessage="*"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="rfvFirstName" runat="server" CssClass="validation" Display="Dynamic" ControlToValidate="txtFirstName" Text="*"></asp:RequiredFieldValidator>
             <br />
             <label class="label">Last name</label>
             <asp:TextBox ID="txtLastName" runat="server" CssClass="entry"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="rfvLastName" runat="server" CssClass="validation" Display="Dynamic" ControlToValidate="txtLastName" ErrorMessage="*"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="rfvLastName" runat="server" CssClass="validation" Display="Dynamic" ControlToValidate="txtLastName" Text="*"></asp:RequiredFieldValidator>
             <br />
-            <label class="label">Email address<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
-            </label>
-            &nbsp;<asp:TextBox ID="txtEmail" runat="server" CssClass="entry"></asp:TextBox><br />
+            <label class="label">Email address</label>
+            <asp:TextBox ID="txtEmail" runat="server" CssClass="entry"></asp:TextBox><br />
             <label class="label">Telephone number</label>
             <asp:TextBox ID="txtPhone" runat="server" CssClass="entry"></asp:TextBox><br />
             <label class="label">Preferred method</label>
