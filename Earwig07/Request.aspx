@@ -27,7 +27,7 @@
             <label class="label">Departure</label>
             <asp:TextBox ID="txtDepartureDate" runat="server" TextMode="Date"></asp:TextBox>
             <asp:CompareValidator ID="cvDeparture" runat="server" ControlToValidate="txtDepartureDate" Operator="GreaterThan" Type="Date" ErrorMessage="Must be after arrival date"
-                ControlToCompare="txtArrivalDate"></asp:CompareValidator>
+                ControlToCompare="txtArrivalDate" CssClass="validation"></asp:CompareValidator>
             <br />
             <label class="label">Number of adults</label>
             <asp:DropDownList ID="ddlNoOfPeople" runat="server">
@@ -56,6 +56,7 @@
             <br />
             <label class="label">Email address</label>
             <asp:TextBox ID="txtEmail" runat="server" CssClass="entry"></asp:TextBox><br />
+            <asp:RequiredFieldValidator ID="rfvEmail" runat="server" CssClass="validation" Display="Dynamic" ControlToValidate="txtEmail" ErrorMessage="Must be a valid email address"></asp:RequiredFieldValidator>
             <label class="label">Telephone number</label>
             <asp:TextBox ID="txtPhone" runat="server" CssClass="entry"></asp:TextBox><br />
             <label class="label">Preferred method</label>
