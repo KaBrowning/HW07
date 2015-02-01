@@ -27,9 +27,10 @@
             <br />
             <label class="label">Departure</label>
             <asp:TextBox ID="txtDepartureDate" runat="server" TextMode="Date"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="rfvDeparture" runat="server" ControlToValidate="txtDepartureDate" CssClass="validation"
+                Display="Dynamic" Text="*"></asp:RequiredFieldValidator>
             <asp:CompareValidator ID="cvDeparture" runat="server" ControlToValidate="txtDepartureDate" Operator="GreaterThan" 
-                Type="Date"
-                ControlToCompare="txtArrivalDate" CssClass="validation">Must be after arrival date</asp:CompareValidator>
+                Type="Date" ControlToCompare="txtArrivalDate" CssClass="validation">Must be after arrival date</asp:CompareValidator>
             <br />
             <label class="label">Number of adults</label>
             <asp:DropDownList ID="ddlNoOfPeople" runat="server">
