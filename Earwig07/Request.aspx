@@ -62,7 +62,7 @@
 
             <label class="label">&nbsp;</label>
             <asp:Button ID="btnSubmit" runat="server" Text="Submit" onclick="btnSubmit_Click" CssClass="button" />&nbsp;
-            <asp:Button ID="btnClear" runat="server" Text="Clear" onclick="btnClear_Click" CssClass="button" /><br />
+            <asp:Button ID="btnClear" runat="server" Text="Clear" onclick="btnClear_Click" CssClass="button" CausesValidation="False" /><br />
             <p>
                 <asp:Label ID="lblMessage" runat="server"></asp:Label>
             </p>
