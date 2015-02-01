@@ -28,8 +28,8 @@
             <label class="label">Departure</label>
             <asp:TextBox ID="txtDepartureDate" runat="server" TextMode="Date"></asp:TextBox>
             <asp:CompareValidator ID="cvDeparture" runat="server" ControlToValidate="txtDepartureDate" Operator="GreaterThan" 
-                Type="Date" ErrorMessage="Must be after arrival date"
-                ControlToCompare="txtArrivalDate" CssClass="validation"></asp:CompareValidator>
+                Type="Date"
+                ControlToCompare="txtArrivalDate" CssClass="validation">Must be after arrival date</asp:CompareValidator>
             <br />
             <label class="label">Number of adults</label>
             <asp:DropDownList ID="ddlNoOfPeople" runat="server">
@@ -60,11 +60,15 @@
             <br />
             <label class="label">Email address</label>
             <asp:TextBox ID="txtEmail" runat="server" CssClass="entry"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtEmail" CssClass="validation" 
+                Display="Dynamic" Text="*"></asp:RequiredFieldValidator>
             <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmail" CssClass="validation" Display="Dynamic" 
                 ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">Must be a valid email address</asp:RegularExpressionValidator>
             <br />
             <label class="label">Telephone number</label>
             <asp:TextBox ID="txtPhone" runat="server" CssClass="entry"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="rfvPhoneNumber" runat="server" ControlToValidate="txtPhone" CssClass="validation" 
+                Display="Dynamic" Text="*"></asp:RequiredFieldValidator>
             <asp:RegularExpressionValidator ID="revPhoneNumber" runat="server" ControlToValidate="txtPhone" CssClass="validation" Display="Dynamic" 
                 ValidationExpression="((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}">Must be a valid phone number</asp:RegularExpressionValidator>
             <br />
