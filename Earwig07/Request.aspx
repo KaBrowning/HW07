@@ -18,9 +18,11 @@
     <section>
         <form id="form1" runat="server" defaultbutton="btnSubmit" defaultfocus="txtArrivalDate">
             <h1>Reservation Request</h1>
+            <asp:ValidationSummary ID="vsReservation" runat="server"  CssClass="validation" HeaderText="* means that the field is required"/>
             <h2>Request data</h2>
             <label class="label">Arrival</label>
-            <asp:TextBox ID="txtArrivalDate" runat="server" TextMode="Date"></asp:TextBox><br />
+            <asp:TextBox ID="txtArrivalDate" runat="server" TextMode="Date"></asp:TextBox>
+            <br />
             <label class="label">Departure</label>
             <asp:TextBox ID="txtDepartureDate" runat="server" TextMode="Date"></asp:TextBox><br />
             <label class="label">Number of adults</label>
@@ -38,14 +40,19 @@
 
             <h2>Special requests</h2>
             <asp:TextBox ID="txtSpecialRequests" runat="server" TextMode="MultiLine"></asp:TextBox><br />
-       
+        
             <h2>Contact information</h2>
             <label class="label">First name</label>
-            <asp:TextBox ID="txtFirstName" runat="server" CssClass="entry"></asp:TextBox><br />
+            <asp:TextBox ID="txtFirstName" runat="server" CssClass="entry"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="rfvFirstName" runat="server" CssClass="validation" Display="Dynamic" ControlToValidate="txtFirstName" ErrorMessage="*"></asp:RequiredFieldValidator>
+            <br />
             <label class="label">Last name</label>
-            <asp:TextBox ID="txtLastName" runat="server" CssClass="entry"></asp:TextBox><br />
-            <label class="label">Email address</label>
-            <asp:TextBox ID="txtEmail" runat="server" CssClass="entry"></asp:TextBox><br />
+            <asp:TextBox ID="txtLastName" runat="server" CssClass="entry"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="rfvLastName" runat="server" CssClass="validation" Display="Dynamic" ControlToValidate="txtLastName" ErrorMessage="*"></asp:RequiredFieldValidator>
+            <br />
+            <label class="label">Email address<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
+            </label>
+            &nbsp;<asp:TextBox ID="txtEmail" runat="server" CssClass="entry"></asp:TextBox><br />
             <label class="label">Telephone number</label>
             <asp:TextBox ID="txtPhone" runat="server" CssClass="entry"></asp:TextBox><br />
             <label class="label">Preferred method</label>
