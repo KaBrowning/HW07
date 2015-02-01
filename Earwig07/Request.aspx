@@ -65,7 +65,8 @@
             <br />
             <label class="label">Telephone number</label>
             <asp:TextBox ID="txtPhone" runat="server" CssClass="entry"></asp:TextBox>
-            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="RegularExpressionValidator"></asp:RegularExpressionValidator>
+            <asp:RegularExpressionValidator ID="revPhoneNumber" runat="server" ControlToValidate="txtPhone" CssClass="validation" Display="Dynamic" 
+                ValidationExpression="((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}">Must be a valid phone number</asp:RegularExpressionValidator>
             <br />
             <label class="label">Preferred method</label>
             <asp:DropDownList ID="ddlPreferredMethod" runat="server">

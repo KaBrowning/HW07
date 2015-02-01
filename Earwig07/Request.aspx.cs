@@ -4,10 +4,10 @@
 /// Code-behind file for the Request page
 /// </summary>
 /// <author>
-/// Replace this text with your first and last name
+/// Kathryn Browning
 /// </author>
 /// <version>
-/// Replace this text with today's date
+/// JFebruary 1, 2015
 /// </version>
 public partial class Request : System.Web.UI.Page
 {
