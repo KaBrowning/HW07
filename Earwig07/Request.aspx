@@ -22,9 +22,13 @@
             <h2>Request data</h2>
             <label class="label">Arrival</label>
             <asp:TextBox ID="txtArrivalDate" runat="server" TextMode="Date"></asp:TextBox>
+            <asp:CompareValidator ID="cvArrival" runat="server" ControlToValidate="txtArrivalDate" Operator="DataTypeCheck" Type="Date"></asp:CompareValidator>
             <br />
             <label class="label">Departure</label>
-            <asp:TextBox ID="txtDepartureDate" runat="server" TextMode="Date"></asp:TextBox><br />
+            <asp:TextBox ID="txtDepartureDate" runat="server" TextMode="Date"></asp:TextBox>
+            <asp:CompareValidator ID="cvDeparture" runat="server" ControlToValidate="txtDepartureDate" Operator="GreaterThan" Type="Date" ErrorMessage="Must be after arrival date"
+                ControlToCompare="txtArrivalDate"></asp:CompareValidator>
+            <br />
             <label class="label">Number of adults</label>
             <asp:DropDownList ID="ddlNoOfPeople" runat="server">
                 <asp:ListItem>1</asp:ListItem>
