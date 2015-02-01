@@ -22,11 +22,13 @@
             <h2>Request data</h2>
             <label class="label">Arrival</label>
             <asp:TextBox ID="txtArrivalDate" runat="server" TextMode="Date"></asp:TextBox>
-            <asp:CompareValidator ID="cvArrival" runat="server" ControlToValidate="txtArrivalDate" Operator="DataTypeCheck" Type="Date"></asp:CompareValidator>
+            <asp:CompareValidator ID="cvArrival" runat="server" ControlToValidate="txtArrivalDate" Operator="DataTypeCheck" 
+                Type="Date"></asp:CompareValidator>
             <br />
             <label class="label">Departure</label>
             <asp:TextBox ID="txtDepartureDate" runat="server" TextMode="Date"></asp:TextBox>
-            <asp:CompareValidator ID="cvDeparture" runat="server" ControlToValidate="txtDepartureDate" Operator="GreaterThan" Type="Date" ErrorMessage="Must be after arrival date"
+            <asp:CompareValidator ID="cvDeparture" runat="server" ControlToValidate="txtDepartureDate" Operator="GreaterThan" 
+                Type="Date" ErrorMessage="Must be after arrival date"
                 ControlToCompare="txtArrivalDate" CssClass="validation"></asp:CompareValidator>
             <br />
             <label class="label">Number of adults</label>
@@ -48,17 +50,23 @@
             <h2>Contact information</h2>
             <label class="label">First name</label>
             <asp:TextBox ID="txtFirstName" runat="server" CssClass="entry"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="rfvFirstName" runat="server" CssClass="validation" Display="Dynamic" ControlToValidate="txtFirstName" Text="*"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="rfvFirstName" runat="server" CssClass="validation" Display="Dynamic" 
+                ControlToValidate="txtFirstName" Text="*"></asp:RequiredFieldValidator>
             <br />
             <label class="label">Last name</label>
             <asp:TextBox ID="txtLastName" runat="server" CssClass="entry"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="rfvLastName" runat="server" CssClass="validation" Display="Dynamic" ControlToValidate="txtLastName" Text="*"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="rfvLastName" runat="server" CssClass="validation" Display="Dynamic" 
+                ControlToValidate="txtLastName" Text="*"></asp:RequiredFieldValidator>
             <br />
             <label class="label">Email address</label>
-            <asp:TextBox ID="txtEmail" runat="server" CssClass="entry"></asp:TextBox><br />
-            <asp:RequiredFieldValidator ID="rfvEmail" runat="server" CssClass="validation" Display="Dynamic" ControlToValidate="txtEmail" ErrorMessage="Must be a valid email address"></asp:RequiredFieldValidator>
+            <asp:TextBox ID="txtEmail" runat="server" CssClass="entry"></asp:TextBox>
+            <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmail" CssClass="validation" Display="Dynamic" 
+                ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">Must be a valid email address</asp:RegularExpressionValidator>
+            <br />
             <label class="label">Telephone number</label>
-            <asp:TextBox ID="txtPhone" runat="server" CssClass="entry"></asp:TextBox><br />
+            <asp:TextBox ID="txtPhone" runat="server" CssClass="entry"></asp:TextBox>
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="RegularExpressionValidator"></asp:RegularExpressionValidator>
+            <br />
             <label class="label">Preferred method</label>
             <asp:DropDownList ID="ddlPreferredMethod" runat="server">
                 <asp:ListItem>Email</asp:ListItem>
